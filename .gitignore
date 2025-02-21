@@ -63,3 +63,6 @@ fastlane/test_output
 
 # swift-create-xcframework
 *.xcframework
+
+# git release xcframework compressed zip
+*.zip
