@@ -63,6 +63,7 @@ fastlane/test_output
 
 # swift-create-xcframework
 *.xcframework
-
 # git release xcframework compressed zip
 *.zip
+# swift create-xcframework --platform ios --zip also calculate the SHA256 checksum
+*.sha256
