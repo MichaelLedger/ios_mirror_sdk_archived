@@ -1,7 +1,7 @@
 # ios_mirror_sdk_archived
 Collection of commonly used archived iOS SDKs for better swift package manager compatibility.
 
-## [Binary Frameworks in Swift](https://developer.apple.com/videos/play/wwdc2019/416)
+## [Binary Frameworks in Swift][wwdc2019]
 Xcode 11 now fully supports using and creating binary frameworks in Swift. Find out how to simultaneously support devices and Simulator with the new XCFramework bundle type, how Swift module interfaces work, and how to manage changes to your framework over time.
 
 1. enable "Build Libraries for Distribution"
@@ -23,6 +23,43 @@ Better algorithms are okay
 
 `@frozen` enums
 `@frozen` structs
+
+### generate framework from `.podspec` via `pod_package.sh`
+```
+% cd factory
+% bundle install --verbose
+% sh pod_package.sh BBBadgeBarButtonItem
+start generate static library BBBadgeBarButtonItem
+  Preparing
+
+Analyzing dependencies
+
+Resolving dependencies of 
+
+Comparing resolved specification to the sandbox manifest
+  A BBBadgeBarButtonItem
+
+Downloading dependencies
+
+-> Installing BBBadgeBarButtonItem (1.2)
+...
+Skipping User Project Integration
+  - Writing Lockfile in `Podfile.lock`
+  - Writing Manifest in `Pods/Manifest.lock`
+
+-> Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
+Building static framework BBBadgeBarButtonItem (1.2) with configuration Release
+Including dependencies
+Vendored libraries: []
+current xcode version: 16.2
+Initial architectures: ["x86_64", "arm64", "arm64e"]
+Final architectures: ["x86_64", "arm64", "arm64e"]
+```
+
+Above shell will genrate `factory/BBBadgeBarButtonItem-1.2/ios/BBBadgeBarButtonItem.framework`.
+
+[Differences between .framework and .xcframework][xcframework]
+> XCFrameworks are the single supported method for distributing pre-compiled code. It is a container format that can contain multiple frameworks, each targeting a different Apple platform.
 
 ### generate checksum & MD5 checksum for a zip
 ```
@@ -307,10 +344,8 @@ BCMeshTransformView.zip: 419ecc8d0daeb38cc2a3fe3295d21f555ca44a8d680857861fed692
 BBBadgeBarButtonItem.zip: 539d99bd7aa3ae7eb7bb2dceac39b623c2e943b1c5e98d6365e12185414f2301
 ```
 
-## References
-[Creating a multiplatform binary framework bundle](https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle)
-[Binary Frameworks in Swift](https://developer.apple.com/videos/play/wwdc2019/416)
-
-## Links
+---
+[xcframework]: https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle
+[wwdc2019]: https://developer.apple.com/videos/play/wwdc2019/416
 [apple-docs]: https://developer.apple.com/documentation/swift_packages/distributing_binary_frameworks_as_swift_packages
 [manual-docs]: https://help.apple.com/xcode/mac/11.4/#/dev544efab96

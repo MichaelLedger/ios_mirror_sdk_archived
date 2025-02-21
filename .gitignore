@@ -67,3 +67,6 @@ fastlane/test_output
 *.zip
 # swift create-xcframework --platform ios --zip also calculate the SHA256 checksum
 *.sha256
+
+# bundle exec pod package
+BBBadgeBarButtonItem-1.2/
