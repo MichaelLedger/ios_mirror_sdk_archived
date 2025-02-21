@@ -1,4 +1,4 @@
-// swift-tools-version: 5.4
+// swift-tools-version: 5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -12,10 +12,6 @@ let package = Package(
         .library(name: "BCMeshTransformView", targets: ["BCMeshTransformView"])
     ],
     dependencies: [
-//        .package(url: "https://github.com/amplitude/analytics-connector-ios.git", from: "1.3.0"),
-//        .package(url: "https://github.com/openid/AppAuth-iOS.git", .upToNextMajor(from: "1.5.0")),
-//        .package(url: "https://github.com/google/GTMAppAuth.git", .upToNextMajor(from: "2.0.0")),
-//        .package(url: "https://github.com/google/gtm-session-fetcher.git", .upToNextMajor(from: "3.4.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
