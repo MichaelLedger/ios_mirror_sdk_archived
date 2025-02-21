@@ -24,7 +24,20 @@ Better algorithms are okay
 `@frozen` enums
 `@frozen` structs
 
-## batch generate checksum of zips
+## generate checksum & MD5 checksum for a zip
+```
+% shasum -a 256 PayPalMessages.xcframework.zip
+565ab72a3ab75169e41685b16e43268a39e24217a12a641155961d8b10ffe1b4  PayPalMessages.xcframework.zip
+```
+If you want to generate an MD5 checksum instead, you can use:
+```
+% md5 PayPalMessages.xcframework.zip
+MD5 (PayPalMessages.xcframework.zip) = ef39266fb315b518e283d2385a0ea9bd
+```
+
+This will give you the MD5 checksum of the ZIP file.
+
+## batch generate checksum for zips
 
 ```
 % python3 checksum_generator.py
