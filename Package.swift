@@ -8,12 +8,16 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v14)],
     products: [
+        .library(name: "ios_mirror_sdk_archived", targets: ["ios_mirror_sdk_archived"]),
         .library(name: "BBBadgeBarButtonItem", targets: ["BBBadgeBarButtonItem"]),
         .library(name: "BCMeshTransformView", targets: ["BCMeshTransformView"])
     ],
     dependencies: [
     ],
     targets: [
+        .target(name: "ios_mirror_sdk_archived",
+                dependencies: ["BBBadgeBarButtonItem", "BCMeshTransformView"],
+                path: "Sources/ios_mirror_sdk_archived"),
         .binaryTarget(
             name: "BBBadgeBarButtonItem",
             url: "https://github.com/MichaelLedger/ios_mirror_sdk_archived/releases/download/0.0.1-beta/BBBadgeBarButtonItem.xcframework.zip",
