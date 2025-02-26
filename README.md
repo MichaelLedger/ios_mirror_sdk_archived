@@ -58,6 +58,12 @@ Final architectures: ["x86_64", "arm64", "arm64e"]
 
 Above shell will genrate `factory/BBBadgeBarButtonItem-1.2/ios/BBBadgeBarButtonItem.framework`.
 
+*To check how many architectures a framework supports, you can use the `lipo -info` command in the terminal.*
+```
+% lipo -info BBBadgeBarButtonItem.framework/BBBadgeBarButtonItem 
+Architectures in the fat file: BBBadgeBarButtonItem.framework/BBBadgeBarButtonItem are: x86_64 arm64 
+```
+
 [Differences between .framework and .xcframework][xcframework]
 > XCFrameworks are the single supported method for distributing pre-compiled code. It is a container format that can contain multiple frameworks, each targeting a different Apple platform.
 
